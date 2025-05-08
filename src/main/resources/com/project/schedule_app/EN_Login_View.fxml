@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="259.0" prefWidth="318.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.schedule_app.Login_Controller">
+   <children>
+      <TextField fx:id="username_field" layoutX="114.0" layoutY="88.0" />
+      <PasswordField fx:id="password_field" layoutX="114.0" layoutY="141.0" />
+      <Button fx:id="login_button" onAction="#login_button_pressed" layoutX="217.0" layoutY="183.0" mnemonicParsing="false" text="Login" />
+      <Text fx:id="zoneID_text" layoutX="14.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ZoneID" />
+      <Text layoutX="138.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Log In">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="40.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
+      <Text layoutX="42.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+   </children>
+</AnchorPane>

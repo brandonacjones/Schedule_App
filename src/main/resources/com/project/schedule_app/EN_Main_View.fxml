@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.schedule_app.Main_Controller">
+   <children>
+      <Pane prefHeight="640.0" prefWidth="1100.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="640.0" stroke="#acacac" strokeType="INSIDE" width="1100.0" />
+            <TabPane fx:id="tabPane" prefHeight="642.0" prefWidth="1100.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Appointments">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="aTableView" layoutX="10.0" layoutY="50.0" prefHeight="514.0" prefWidth="1080.0">
+                                <columns>
+                                  <TableColumn fx:id="appointment_id_column" maxWidth="108.0" prefWidth="108.0" text="Appointment ID" />
+                                  <TableColumn fx:id="title_column" maxWidth="108.0" prefWidth="108.0" text="Title" />
+                                    <TableColumn fx:id="description_column" maxWidth="108.0" prefWidth="108.0" text="Description" />
+                                    <TableColumn fx:id="location_column" maxWidth="108.0" prefWidth="108.0" text="Location" />
+                                    <TableColumn fx:id="contact_column" maxWidth="108.0" prefWidth="108.0" text="Contact" />
+                                    <TableColumn fx:id="type_column" maxWidth="108.0" prefWidth="108.0" text="Type" />
+                                    <TableColumn fx:id="start_column" maxWidth="108.0" prefWidth="108.0" text="Start" />
+                                    <TableColumn fx:id="end_column" maxWidth="108.0" prefWidth="108.0" text="End" />
+                                    <TableColumn fx:id="customer_id_column" maxWidth="108.0" prefWidth="108.0" text="Customer ID" />
+                                    <TableColumn fx:id="user_id_column" maxWidth="108.0" prefWidth="108.0" text="User ID" />
+                                </columns>
+                              </TableView>
+                              <MenuButton layoutX="15.0" layoutY="15.0" mnemonicParsing="false" text="Add Modify or Delete Appointments">
+                                <items>
+                                  <MenuItem fx:id="aAddAppointment" mnemonicParsing="false" onAction="#aAddAppointmentPressed" text="Add Appointment" />
+                                  <MenuItem fx:id="aModifyAppointment" mnemonicParsing="false" onAction="#aModifyAppointmentPressed" text="Modify Appointment" />
+                                    <MenuItem fx:id="aDeleteAppointment" mnemonicParsing="false" onAction="#aDeleteAppointmentPressed" text="Delete Appointment" />
+                                </items>
+                              </MenuButton>
+                              <Button fx:id="aNextButton" layoutX="490.0" layoutY="15.0" mnemonicParsing="false" onAction="#aNextButtonPressed" text="&gt;&gt;" />
+                              <Button fx:id="aPrevButton" layoutX="450.0" layoutY="15.0" mnemonicParsing="false" onAction="#aPrevButtonPressed" text="&lt;&lt;" />
+                              <RadioButton fx:id="aMonthRadio" layoutX="260.0" layoutY="20.0" mnemonicParsing="false" onAction="#aMonthRadioPressed" text="Month" />
+                              <RadioButton fx:id="aWeekRadio" layoutX="330.0" layoutY="20.0" mnemonicParsing="false" onAction="#aWeekRadioPressed" text="Week" />
+                              <RadioButton fx:id="aAllRadio" layoutX="395.0" layoutY="20.0" mnemonicParsing="false" onAction="#aAllRadioPressed" text="All" />
+                              <Text fx:id="aRangeText" layoutX="550.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Showing Appointments Between: " />
+                              <Button fx:id="aLogOutButton" layoutX="14.0" layoutY="573.0" mnemonicParsing="false" onAction="#aLogOutButtonPressed" text="Log Out" />
+                              <Button fx:id="aRefresh" layoutX="83.0" layoutY="573.0" mnemonicParsing="false" onAction="#cRefreshPressed" text="Refresh" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="Customers">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="cTableview" layoutX="10.0" layoutY="50.0" prefHeight="514.0" prefWidth="1080.0">
+                                 <columns>
+                                    <TableColumn fx:id="cCustomerID" prefWidth="154.0" text="Customer ID" />
+                                    <TableColumn fx:id="cName" prefWidth="154.0" text="Name" />
+                                    <TableColumn fx:id="cAddress" prefWidth="154.0" text="Address" />
+                                    <TableColumn fx:id="cPostalCode" prefWidth="154.0" text="Postal Code" />
+                                    <TableColumn fx:id="cPhone" prefWidth="154.0" text="Phone" />
+                                    <TableColumn fx:id="cDivisionID" prefWidth="154.0" text="Division ID" />
+                                    <TableColumn fx:id="cCountry" prefWidth="154.0" text="Country" />
+                                 </columns>
+                              </TableView>
+                              <Button fx:id="cLogOutButton" layoutX="14.0" layoutY="573.0" mnemonicParsing="false" onAction="#aLogOutButtonPressed" text="Log Out" />
+                              <MenuButton layoutX="15.0" layoutY="15.0" mnemonicParsing="false" text="Add, Update, or Delete Customer Record">
+                                <items>
+                                  <MenuItem fx:id="cAddCustomer" mnemonicParsing="false" onAction="#cAddCustomerPressed" text="Add Customer" />
+                                  <MenuItem fx:id="cUpdateCustomer" mnemonicParsing="false" onAction="#cUpdateCustomerPressed" text="Update Customer" />
+                                    <MenuItem fx:id="cDeleteCustomer" mnemonicParsing="false" onAction="#cDeleteCustomerPressed" text="Delete Customer" />
+                                </items>
+                              </MenuButton>
+                              <Button fx:id="cRefresh" layoutX="83.0" layoutY="573.0" mnemonicParsing="false" onAction="#cRefreshPressed" text="Refresh" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Reports">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Pane layoutX="83.0" layoutY="35.0" prefHeight="123.0" prefWidth="425.0">
+                                 <children>
+                                    <Rectangle fx:id="rUpcomingRect" fill="WHITE" height="80.0" layoutX="10.0" layoutY="25.0" stroke="#acacac" strokeType="INSIDE" width="405.0" />
+                                    <Text fx:id="rUpcomingTitle" layoutX="15.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Upcoming Appointment" />
+                                    <Text fx:id="rUpcomingID" layoutX="24.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Appointment ID:" />
+                                    <Text fx:id="rUpcomingDate" layoutX="84.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date:" />
+                                    <Text fx:id="rUpcomingTime" layoutX="85.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time" />
+                                 </children>
+                              </Pane>
+                              <Pane layoutX="550.0" layoutY="161.0" prefHeight="161.0" prefWidth="500.0">
+                                 <children>
+                                    <Text layoutX="5.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Appointments by Type and Month" />
+                                    <TableView fx:id="rTMTableview" layoutX="5.0" layoutY="20.0" prefHeight="135.0" prefWidth="490.0">
+                                      <columns>
+                                        <TableColumn fx:id="rTMMonth" prefWidth="163.0" text="Month" />
+                                        <TableColumn fx:id="rTMType" prefWidth="163.0" text="Type" />
+                                          <TableColumn fx:id="rTMTotal" prefWidth="163.0" text="Total" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </Pane>
+                              <Pane layoutX="550.0" prefHeight="161.0" prefWidth="500.0">
+                                 <children>
+                                    <Text layoutX="5.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Customers By Division" />
+                                    <TableView fx:id="rDTableview" layoutX="5.0" layoutY="20.0" prefHeight="135.0" prefWidth="490.0">
+                                       <columns>
+                                          <TableColumn fx:id="rDDivision" prefWidth="245.0" text="Division" />
+                                          <TableColumn fx:id="rDTotal" prefWidth="245.0" text="Total" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </Pane>
+                              <Button fx:id="rLogOutButton" layoutX="14.0" layoutY="573.0" mnemonicParsing="false" onAction="#aLogOutButtonPressed" text="Log Out" />
+                              <Pane layoutX="50.0" layoutY="161.0" prefHeight="161.0" prefWidth="500.0">
+                                 <children>
+                                    <Text layoutX="5.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Appointments by Customer" />
+                                    <TableView fx:id="rCTableview" layoutX="5.0" layoutY="20.0" prefHeight="135.0" prefWidth="490.0">
+                                      <columns>
+                                        <TableColumn fx:id="rCCustomer" prefWidth="245.0" text="Customer" />
+                                        <TableColumn fx:id="rCTotal" prefWidth="245.0" text="Total" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </Pane>
+                              <TableView fx:id="rTableView" layoutX="55.0" layoutY="370.0" prefHeight="194.0" prefWidth="990.0">
+                                 <columns>
+                                    <TableColumn fx:id="rAppointmentID" maxWidth="157.0" minWidth="50.0" prefWidth="141.0" text="Appointment ID" />
+                                    <TableColumn fx:id="rTitle" maxWidth="157.0" minWidth="50.0" prefWidth="141.0" text="Title" />
+                                    <TableColumn fx:id="rType" maxWidth="157.0" minWidth="50.0" prefWidth="141.0" text="Type" />
+                                    <TableColumn fx:id="rDescription" maxWidth="157.0" minWidth="50.0" prefWidth="141.0" text="Description" />
+                                    <TableColumn fx:id="rStart" maxWidth="157.0" minWidth="50.0" prefWidth="141.0" text="Start" />
+                                    <TableColumn fx:id="rEnd" maxWidth="157.0" minWidth="50.0" prefWidth="141.0" text="End" />
+                                    <TableColumn fx:id="rCustomerID" maxWidth="157.0" minWidth="50.0" prefWidth="141.0" text="Customer ID" />
+                                 </columns>
+                              </TableView>
+                              <ComboBox fx:id="rScheduleCombo" layoutX="137.0" layoutY="340.0" onAction="#rScheduleComboPressed" prefWidth="150.0" promptText="Contact" />
+                              <Text layoutX="56.0" layoutY="358.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Schedule" />
+                              <Button fx:id="rRefresh" layoutX="83.0" layoutY="573.0" mnemonicParsing="false" onAction="#cRefreshPressed" text="Refresh" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

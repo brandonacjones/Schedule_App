@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"com.project.schedule_app","l":"com.project.schedule_app"},{"m":"com.project.schedule_app","l":"Database"},{"m":"com.project.schedule_app","l":"DBAccess"},{"m":"com.project.schedule_app","l":"Helper"},{"m":"com.project.schedule_app","l":"Model"}];updateSearchResults();

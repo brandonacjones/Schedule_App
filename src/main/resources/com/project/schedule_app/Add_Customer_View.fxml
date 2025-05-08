@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="330.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.schedule_app.Add_Customer_Controller">
+   <children>
+      <Text fx:id="customerID_text" layoutX="30.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer ID: ID" />
+      <TextField fx:id="firstName_field" layoutX="30.0" layoutY="73.0" prefWidth="100.0" promptText="First Name" />
+      <TextField fx:id="lastName_field" layoutX="150.0" layoutY="73.0" prefWidth="100.0" promptText="Last Name" />
+      <TextField fx:id="address_field" layoutX="30.0" layoutY="140.0" promptText="123 Main St." />
+      <TextField fx:id="postal_field" layoutX="270.0" layoutY="73.0" prefWidth="80.0" promptText="Postal Code" />
+      <TextField fx:id="phone_field" layoutX="200.0" layoutY="140.0" promptText="Phone Number" />
+      <ComboBox fx:id="division_combo" layoutX="200.0" layoutY="211.0"  prefWidth="150.0" promptText="Division" />
+      <Button fx:id="addCustomer_button" layoutX="200.0" layoutY="269.0" mnemonicParsing="false" onAction="#addCustomer_button_pressed" text="Edit Customer" />
+      <Button fx:id="cancel_button" layoutX="300.0" layoutY="269.0" mnemonicParsing="false" onAction="#cancel_button_pressed" text="Cancel" />
+      <Text layoutX="30.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" />
+      <Text layoutX="150.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" />
+      <Text layoutX="30.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Street Address" />
+      <Text layoutX="270.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Postal Code" />
+      <Text layoutX="200.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number" />
+      <Text layoutX="200.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Division" />
+      <ComboBox fx:id="country_combo" layoutX="30.0" layoutY="211.0" onAction="#country_combo_pressed" prefWidth="150.0" promptText="Country" />
+      <Text layoutX="30.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Country" />
+   </children>
+</AnchorPane>
